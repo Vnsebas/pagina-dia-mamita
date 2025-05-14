@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+body {
+    background: linear-gradient(135deg, #ffeaea 0%, #fff0f6 100%);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.titulo {
+    font-family: 'Pacifico', cursive, sans-serif;
+    color: #e75480;
+    font-size: 2.5em;
+    margin: 40px 0 30px 0;
+    text-shadow: 1px 2px 8px #fff0f6;
+    letter-spacing: 2px;
+    animation: aparecerTitulo 1.2s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes aparecerTitulo {
+    0% { opacity: 0; transform: translateY(-40px) scale(0.8);}
+    100% { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+.envelope {
+    width: 320px;
+    height: 210px;
+    position: relative;
+    cursor: pointer;
+    margin-bottom: 40px;
+    perspective: 800px;
+    transition: transform 0.3s;
+    animation: flotar 2.5s infinite alternate;
+}
+
+@keyframes flotar {
+    0% { transform: translateY(0);}
+    100% { transform: translateY(-12px);}
+}
+
+.flap {
+    width: 320px;
+    height: 120px;
+    background: linear-gradient(135deg, #ffb6c1 70%, #fff0f6 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 40px 60px;
+    border-top-right-radius: 40px 60px;
+    z-index: 3;
+    transition: transform 0.8s cubic-bezier(.68,-0.55,.27,1.55);
+    transform-origin: top center;
+    box-shadow: 0 8px 16px rgba(231,84,128,0.15);
+    border-bottom: 3px solid #e75480;
+}
+
+.body {
+    width: 320px;
+    height: 160px;
+    background: linear-gradient(135deg, #fff 80%, #ffeaea 100%);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    border-bottom-left-radius: 40px 60px;
+    border-bottom-right-radius: 40px 60px;
+    border: 3px solid #e75480;
+    z-index: 1;
+    box-shadow: 0 8px 24px rgba(231,84,128,0.10);
+    animation: brillar 2s infinite alternate;
+}
+
+@keyframes brillar {
+    0% { box-shadow: 0 8px 24px rgba(231,84,128,0.10);}
+    100% { box-shadow: 0 8px 32px 8px #ffeaea;}
+}
+
+.heart {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%) scale(1);
+    width: 44px;
+    height: 40px;
+    z-index: 4;
+    animation: latido 1.2s infinite;
+}
+.heart:before,
+.heart:after {
+    content: "";
+    position: absolute;
+    left: 22px;
+    top: 0;
+    width: 22px;
+    height: 36px;
+    background: #e75480;
+    border-radius: 22px 22px 0 0;
+    transform: rotate(-45deg);
+}
+.heart:after {
+    left: 0;
+    transform: rotate(45deg);
+}
+
+@keyframes latido {
+    0%, 100% { transform: translateX(-50%) scale(1);}
+    20% { transform: translateX(-50%) scale(1.15);}
+    40% { transform: translateX(-50%) scale(0.95);}
+    60% { transform: translateX(-50%) scale(1.1);}
+    80% { transform: translateX(-50%) scale(0.98);}
+}
+
+.shadow {
+    position: absolute;
+    bottom: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 20px;
+    background: radial-gradient(ellipse at center, #e75480 0%, #fff0f6 80%);
+    opacity: 0.2;
+    border-radius: 50%;
+    z-index: 0;
+    animation: sombra 2.5s infinite alternate;
+}
+
+@keyframes sombra {
+    0% { width: 120px; opacity: 0.2;}
+    100% { width: 140px; opacity: 0.28;}
+}
+
+/* Animación de abrir sobre */
+.open .flap {
+    transform: rotateX(-120deg);
+}
+
+.letter {
+    width: 90vw;
+    max-width: 700px;
+    min-height: 200px;
+    background: #fff8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(231,84,128,0.13);
+    position: absolute;
+    top: 230px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    opacity: 0;
+    transition: transform 0.7s cubic-bezier(.68,-0.55,.27,1.55), opacity 0.7s;
+    padding: 36px 32px 32px 32px;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+    font-size: 1.1em;
+    color: #5a3a3a;
+    border: 2px solid #ffeaea;
+}
+
+.open + .letter {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateX(-50%) scale(1);
+    animation: cartaEntrada 1.1s cubic-bezier(.68,-0.55,.27,1.55);
+}
+
+@keyframes cartaEntrada {
+    0% { opacity: 0; transform: translateX(-50%) scale(0.7);}
+    80% { opacity: 1; transform: translateX(-50%) scale(1.05);}
+    100% { opacity: 1; transform: translateX(-50%) scale(1);}
+}
+
+.letter h2 {
+    color: #e75480;
+    font-family: 'Pacifico', cursive, sans-serif;
+    font-size: 2em;
+    margin-bottom: 10px;
+    text-align: center;
+    animation: aparecerTitulo 1.2s;
+}
+
+.letter hr {
+    border: none;
+    border-top: 2px dashed #e75480;
+    margin: 24px 0;
+    width: 80%;
+}
+
+.letter h3 {
+    color: #e75480;
+    font-family: 'Pacifico', cursive, sans-serif;
+    font-size: 1.3em;
+    margin-bottom: 8px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.letter ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+.letter ul li {
+    margin-bottom: 7px;
+    font-size: 1em;
+    position: relative;
+    padding-left: 28px;
+}
+.letter ul li:before {
+    content: "💗";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.letter blockquote {
+    background: #fff3f8;
+    border-left: 4px solid #e75480;
+    padding: 16px;
+    margin: 0;
+    font-style: italic;
+}
+
+/* Decoración floral alrededor de la carta */
+.letter::before, .letter::after {
+    content: "🌸🌷🌼🌺";
+    position: absolute;
+    font-size: 2em;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    pointer-events: none;
+    opacity: 0.85;
+    animation: floresBrillan 2.5s infinite alternate;
+}
+.letter::before {
+    top: -38px;
+    letter-spacing: 0.5em;
+}
+.letter::after {
+    bottom: -38px;
+    letter-spacing: 0.5em;
+    transform: scaleX(-1);
+}
+@keyframes floresBrillan {
+    0% { filter: brightness(1) drop-shadow(0 0 0px #e75480);}
+    100% { filter: brightness(1.3) drop-shadow(0 0 8px #e75480);}
+}
+
+/* Esquinas decoradas */
+.letter .esquina {
+    position: absolute;
+    font-size: 1.8em;
+    pointer-events: none;
+    opacity: 0.8;
+    animation: girarFlor 4s linear infinite;
+}
+.letter .esq1 { top: 8px; left: 16px; animation-delay: 0s;}
+.letter .esq2 { top: 8px; right: 16px; animation-delay: 1s;}
+.letter .esq3 { bottom: 8px; left: 16px; animation-delay: 2s;}
+.letter .esq4 { bottom: 8px; right: 16px; animation-delay: 3s;}
+@keyframes girarFlor {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+/* --- GALERÍA DE FOTOS Y MODAL --- */
+.fotos-mama {
+    display: flex;
+    justify-content: center;      /* Centra horizontalmente */
+    align-items: flex-start;      /* Alinea arriba si hay textos de diferente altura */
+    gap: 32px;                    /* Espacio igual entre las tarjetas */
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.foto-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 160px; /* o el ancho que prefieras */
+}
+.foto-card p {
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+.foto-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px #e7548033;
+}
+.foto-card img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 16px #e7548077;
+}
+
+/* Modal para imagen ampliada */
+#modal-img-bg {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+#modal-img-bg.active {
+    display: flex;
+}
+#modal-img-bg img {
+    max-width: 80vw;
+    max-height: 80vh;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px #000a;
+    background: #fff;
+    padding: 10px;
+}
+/* Botón cerrar bonito */
+#close {
+    background: linear-gradient(135deg, #e75480 60%, #ffb6c1 100%);
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 10px 32px;
+    font-size: 1.1em;
+    font-family: 'Pacifico', cursive, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #e7548033;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    margin: 20px auto 0 auto;
+    display: block;
+}
+#close:hover {
+    background: linear-gradient(135deg, #ffb6c1 60%, #e75480 100%);
+    transform: scale(1.07);
+    box-shadow: 0 4px 16px #e7548077;
+}
+/* Fondo con flores flotando */
+#flores-bg {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    pointer-events: none;
+    z-index: 0;
+}
+.flor-flotante {
+    position: absolute;
+    font-size: 2.2em;
+    opacity: 0.7;
+    animation: flotarFlor 12s linear infinite;
+}
+@keyframes flotarFlor {
+    0% { transform: translateY(0) scale(1);}
+    100% { transform: translateY(-100vh) scale(1.2);}
+}
+
+/* Frase aleatoria */
+.frase-aleatoria {
+    font-family: 'Pacifico', cursive, sans-serif;
+    color: #e75480;
+    font-size: 1.3em;
+    text-align: center;
+    margin-bottom: 18px;
+    animation: aparecerTitulo 1.2s;
+}
+
+/* Firma digital */
+.firma-digital {
+    font-family: 'Pacifico', cursive, sans-serif;
+    color: #e75480;
+    font-size: 1.4em;
+    text-align: right;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+.firma-digital span {
+    font-size: 1.1em;
+    color: #b03a5b;
+}
+
+/* Botón volver a leer y cambiar color */
+#reopen, #color-btn {
+    background: linear-gradient(135deg, #e75480 60%, #ffb6c1 100%);
+    color: #fff;
+    border: none;
+    border-radius: 24px;
+    padding: 10px 32px;
+    font-size: 1.1em;
+    font-family: 'Pacifico', cursive, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 8px #e7548033;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    margin: 10px 10px 0 0;
+    display: inline-block;
+}
+#reopen:hover, #color-btn:hover {
+    background: linear-gradient(135deg, #ffb6c1 60%, #e75480 100%);
+    transform: scale(1.07);
+    box-shadow: 0 4px 16px #e7548077;
+}
+/* Ejemplo de inicio oculto */
+.letter {
+    pointer-events: none;
+    opacity: 0;
+    transform: translateX(-50%) scale(0);
+    transition: all 0.7s;
+}
+.open + .letter,
+.envelope.open + .letter {
+    pointer-events: auto;
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+}

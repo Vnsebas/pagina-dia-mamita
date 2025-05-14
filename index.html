@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Para ti, mamá</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <audio id="bg-music" src="musica/mama.mp4" loop></audio>
+    <audio id="open-sound" src="musica/open.mp3"></audio>
+    <div id="flores-bg"></div>
+    <h1 class="titulo">Para ti, mamá</h1>
+    <div class="envelope" id="envelope">
+        <div class="flap"></div>
+        <div class="heart"></div>
+        <div class="body"></div>
+        <div class="shadow"></div>
+    </div>
+    <div class="letter" id="letter">
+        <span class="esquina esq1">🌸</span>
+        <span class="esquina esq2">🌷</span>
+        <span class="esquina esq3">🌼</span>
+        <span class="esquina esq4">🌺</span>
+        <h2>✨ Para Mi Adorada Mamá ✨</h2>
+        <div id="frase-aleatoria" class="frase-aleatoria"></div>
+        <p>Queridísima Mamá,</p>
+        <p>
+            Hoy, quiero que estas palabras lleguen a ti como un suave susurro lleno de amor y gratitud. 
+            Eres el faro que ilumina mis días, la melodía que alegra mi alma 💖 y el abrazo que siempre me reconforta. 
+            Tu fuerza y tu ternura son un regalo invaluable en mi vida.
+        </p>
+        <p>
+            Gracias por cada enseñanza, por tu paciencia infinita y por pintar mi mundo con los colores más hermosos de la esperanza y la alegría. 
+            Tu sonrisa 😊 tiene el poder de transformar cualquier momento. ¡No imagino mi vida sin ti!
+        </p>
+        <p>
+            Este mensaje es una pequeña muestra de todo el amor que te tengo. 
+            Deseo que te haga sonreír y sentir lo profundamente especial y querida que eres para mí. 
+            ¡Te amo hasta el infinito y más allá! 🚀
+        </p>
+        <hr>
+        <h3>Un pensamiento desde mi corazón:</h3>
+        <blockquote>
+            "El amor de una madre es el combustible que permite a un ser humano normal hacer lo imposible."<br>
+            <small>– Marion C. Garretty</small>
+        </blockquote>
+        <hr>
+        <h3>Vales Especiales Canjeables Por:</h3>
+        <ul>
+            <li>🍳 Un desayuno sorpresa en la cama.</li>
+            <li>🍿 Una tarde de tu película favorita (¡yo elijo las palomitas!).</li>
+            <li>🧹 Mi ayuda para cualquier tarea, sin preguntas.</li>
+            <li>🤗 Un millón de abrazos y besos.</li>
+        </ul>
+        <hr>
+        <h3>Pequeños Recuerdos Inolvidables:</h3>
+        <ul>
+            <li>🐶 Recuerdo con mi perrito: ¡Cuánta alegría!</li>
+            <li>🌇 Selfie en la azotea: Disfrutando del sol y la vista.</li>
+            <li>🌱 Selfie en el césped: Un día radiante y relajado.</li>
+        </ul>
+        <hr>
+        <h3>Fotos Especiales de Mamá:</h3>
+        <div class="fotos-mama">
+            <div class="foto-card">
+                <img src="imagenes/1.jpg" alt="Mamá sonriendo">
+                <p>Tu sonrisa ilumina mi vida</p>
+            </div>
+            <div class="foto-card">
+                <img src="imagenes/2.jpg" alt="Mamá en familia">
+                <p>Momentos en familia</p>
+            </div>
+            <div class="foto-card">
+                <img src="imagenes/3.jpg" alt="Mamá feliz">
+                <p>Siempre feliz y hermosa</p>
+            </div>
+        </div>
+        <hr>
+        <h3>Unas Palabras del Corazón:</h3>
+        <p style="color:#e75480; font-weight:bold;">
+            En tu abrazo encuentro calma,<br>
+            En tu risa, pura alegría.<br>
+            Eres luz que guía mi alma,<br>
+            Mi querida mamá, día a día.
+        </p>
+        <hr>
+        <h3>Valiosas Lecciones que Aprendí de Ti:</h3>
+        <ul>
+            <li>💗 La importancia de la perseverancia.</li>
+            <li>💗 El valor de la honestidad y la bondad.</li>
+            <li>💗 Alegría en las pequeñas cosas.</li>
+            <li>💗 Que el amor verdadero es incondicional.</li>
+        </ul>
+        <hr>
+        <h3>Cosas que Admiro Inmensamente de Ti:</h3>
+        <ul>
+            <li>💗 Tu fortaleza ante cualquier desafío.</li>
+            <li>💗 Tu sabiduría que siempre me guía.</li>
+            <li>💗 Tu increíble capacidad de amar sin condiciones.</li>
+            <li>💗 Tu paciencia, ¡que a veces pongo a prueba!</li>
+        </ul>
+        <hr>
+        <h3>Una Canción para Ti:</h3>
+        <a href="https://www.youtube.com/watch?v=AwiGE0B8foU&ab_channel=TonyVideos" target="_blank" style="display:inline-block; background:#e75480; color:#fff; padding:10px 20px; border-radius:20px; text-decoration:none; font-weight:bold;">
+            🎵 Escuchar ahora
+        </a>
+        <br><br>
+        <button id="close">Cerrar</button>
+        <button id="reopen" style="display:none;">Volver a leer</button>
+        <button id="color-btn">Cambiar color de fondo</button>
+        <div class="firma-digital">Con todo mi amor, <span>Tu Hijo Viejo Sabroso</span></div>
+    </div>
+    <!-- Modal para imagen ampliada -->
+    <div id="modal-img-bg">
+        <img id="modal-img" src="" alt="Foto ampliada">
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
